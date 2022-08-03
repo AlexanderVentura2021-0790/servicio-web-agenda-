@@ -5,6 +5,21 @@ import {baseDeDato} from "./ConfiguracionFirebase";
 import ContactoNuevo from "./ContactoNuevo";
 import './App.css';
 
+
+const express = require('express');
+const app = express();
+const path = require('path');
+
+
+app.get("/",(req,res)=>{
+    
+  res.sendFile(path.join(dirname + "/index.html"));
+});
+
+app.listen(8080,()=>{
+console.log("servidor ejecutandose",8080);
+});
+
 function App() {
   const [contactos, setContactos] = useState([]);
 
